@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Pagination } from './models/pagination';
-import { Product } from './models/product';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +6,11 @@ import { Product } from './models/product';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   title = 'Sklep SkiNet';
-  products: Product[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<Pagination<Product[]>>('https://localhost:7289/api/products?pageSize=50').subscribe({
-      next: response => this.products = response.data,
-      error: error => console.log(error),
-      complete: () => {
-        console.log('request completed');
-        console.log('exstra statment');
-      }
-    })
   }
 }
 
