@@ -11,3 +11,17 @@
     right: 32px;
 
 }
+
+a {
+    text-decoration: none;
+    color:rgba(52, 56, 51, 0.733);
+
+    &.active {
+        color: orange;
+    }
+}
+
+.logo {
+    max-height: 80px;
+    cursor: pointer;
+}
